@@ -1,2 +1,2 @@
 # TLS
-TLS - Tempory Linux(Alpine) Shell/System
+TLS - Temporary Linux(Alpine) Shell/System
