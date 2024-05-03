@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="Temp-Linux-Shell",
-    version="0.1.0",
+    version="0.1.3",
     author="Noriskky",
     author_email="Noriskky44@proton.me",
     description="Wrapper around Chroot to make it easy to use temporary Linux Shells.",
