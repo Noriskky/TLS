@@ -1,4 +1,3 @@
-#!sudo /bin/python
 import subprocess
 import requests
 import os
