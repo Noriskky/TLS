@@ -4,7 +4,7 @@
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Alpine Linux](https://img.shields.io/badge/Alpine_Linux-%230D597F.svg?style=for-the-badge&logo=alpine-linux&logoColor=white)
 
-[![PyPI download month](https://img.shields.io/pypi/dm/ansicolortags.svg)](https://pypi.python.org/pypi/Temp-Linux-Shell/) [![PyPI pyversions](https://img.shields.io/pypi/pyversions/ansicolortags.svg)](https://pypi.python.org/pypi/Temp-Linux-Shell//)
+[![PyPI download month](https://img.shields.io/pypi/dm/Temp-Linux-Shell.svg)](https://pypi.python.org/pypi/Temp-Linux-Shell/) [![PyPI pyversions](https://img.shields.io/pypi/pyversions/Temp-Linux-Shell.svg)](https://pypi.python.org/pypi/Temp-Linux-Shell//)
 
 ![Screenshot of TLS](https://github.com/Noriskky/TLS/blob/main/pictures/screenshot.png?raw=true) 
 
