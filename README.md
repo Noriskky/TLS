@@ -29,4 +29,15 @@ Once installed, you can start a temporary Alpine Linux shell by running the `tls
 
 ## Support
 
-There currently only Support for Linux because it is using ``Chroot`` it's planned to migrate to Docker or something else.
+There is currently only Support for Linux because it is using ``Chroot`` it's planned to migrate to Docker or something else.
+
+## How to contribute
+
+Hey if you want to contribute to this Project you are welcome to do that
+for testing you can use ``Temp-Linux-Shell/test.py`` with the following command
+
+```bash
+python3 Temp-Linux-Shell/test.py
+```
+
+It's like you would do ``tls`` in you command line but you aren't installing it just for testing, might a replace it later by a Makefile + venv but for now it should work.

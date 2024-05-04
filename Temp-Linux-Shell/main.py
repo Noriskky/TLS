@@ -23,7 +23,7 @@ def get_latest_alpine_version():
     except Exception as e:
         print(f"An error occurred while fetching the latest version: {e}")
         return None
-def start_temp_alpine_shell(hostname, command=None, directory=None):
+def start_temp_alpine_shell(hostname, command=None, directory=None, password=None):
     try:
         if directory:
             working_directory = os.path.abspath(os.path.join(os.getcwd(), directory))
@@ -71,6 +71,10 @@ def start_temp_alpine_shell(hostname, command=None, directory=None):
         print("\033[94mChanging hostname...\033[0m")
         subprocess.run(["sudo", "sh", "-c", f"echo '{hostname}' > {working_directory}/etc/hostname"])
         
+        if password:
+            print("\033[94mChanging Password...\033[0m")
+            subprocess.run(["sudo", "sh", "-c", f"echo -e '{password}\n{password}' | passwd"])
+        
         # Execute the specified command if provided
         if command:
             print(f"\033[94mExecuting command: {command}...\033[0m")
@@ -101,12 +105,12 @@ def start_temp_alpine_shell(hostname, command=None, directory=None):
 
 
 class tls:
-
     def __init__(self, name):
         parser = argparse.ArgumentParser(description="Start a temporary Alpine Linux shell")
         parser.add_argument("--hostname", "-hn", default="alpine", help="Specify the hostname for the Alpine Linux environment")
         parser.add_argument("--command", "-c", help="Command to execute in the Alpine Linux environment")
         parser.add_argument("--directory", "-d", help="Where the folder of the Shell should be")
+        parser.add_argument("--password", "--passwd", "-p", help="Password for the Root User")
         #parser.add_argument("--persistent", "-p", help="A Flag to make the Shell persistent. Make sure to specify a directory.", action="store_true")
         args = parser.parse_args()
 
@@ -114,4 +118,4 @@ class tls:
         #    print("Make sure to specify a directory.")
         #    quit()
 
-        start_temp_alpine_shell(args.hostname, args.command, args.directory)
+        start_temp_alpine_shell(args.hostname, args.command, args.directory, args.password)
