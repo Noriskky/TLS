@@ -1,3 +1,4 @@
 ./dist
 ./build
 *.egg-info
+./Temp-Linux-Shell/__pycache__
