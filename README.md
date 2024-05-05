@@ -41,3 +41,21 @@ make run
 ```
 
 It's like you would do ``tls`` in you command line but you aren't installing it just for testing purposes.
+
+## Compile from Source
+
+### Building
+
+If you want to compile and install it from source you can build it with the following command:
+```bash
+make build
+```
+The output will be in ``./dist``
+
+### Installing & Building
+
+And if you wan't to build and install it then you can do it with the following command:
+```bash
+make clean
+make install
+```
