@@ -1,8 +1,10 @@
-./dist
-./build
-.egg-info
+dist
+build
+*.egg-info
 TLS/__pycache__
 
-.xml
-.iml
-./.idea
+*.xml
+*.iml
+.idea
+
+venv

@@ -37,10 +37,17 @@ Hey if you want to contribute to this Project you are welcome to do that
 for testing you can use ``Temp-Linux-Shell/test.py`` with the following command
 
 ```bash
+make clean
+make install
 make run
 ```
+or you can do:
 
-It's like you would do ``tls`` in you command line but you aren't installing it just for testing purposes.
+```bash
+make all
+```
+
+It will install tls in a Python venv __**you may have to install some packages manually into the Venv**__.
 
 ## Compile from Source
 
@@ -48,14 +55,20 @@ It's like you would do ``tls`` in you command line but you aren't installing it 
 
 If you want to compile and install it from source you can build it with the following command:
 ```bash
+make clean
 make build
 ```
-The output will be in ``./dist``
+The output will be in ``./dist`` it can be installed with: 
+```bash
+pip install dist/tls-<version>.tar.gz
+```
+Replace ``<version>`` with the current defined in ``setup.py``.
 
 ### Installing & Building
 
-And if you wan't to build and install it then you can do it with the following command:
 ```bash
 make clean
 make install
 ```
+
+This installs in the Venv.
