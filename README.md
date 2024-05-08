@@ -13,7 +13,7 @@
 You can install TLS via pip:
 
 ```bash
-pip install Temp-Linux-Shell
+pip install TLS
 ```
 
 ## Usage

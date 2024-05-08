@@ -1,12 +1,12 @@
-.PHONY: run
+.PHONY: all clean install run
 
-# Python Code
+all: clean install run
 clean:
 	rm -rf dist
 build:
 	python -m build
 run:
-	py Temp-Linux-Shell/test.py
+	./venv/bin/tls
 install:
-	pip install .
+	./venv/bin/pip3 install .
 
