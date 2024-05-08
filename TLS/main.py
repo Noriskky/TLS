@@ -1,12 +1,12 @@
-import subprocess
-import requests
-import os
 import argparse
-from tqdm import tqdm
-import shutil
-import uuid
-import socket
+import os
+import subprocess
 import sys
+import uuid
+
+import requests
+from tqdm import tqdm
+
 
 def main():
     tls(sys.argv[1:])
@@ -29,10 +29,10 @@ def start_temp_alpine_shell(hostname, command=None, directory=None, password=Non
             working_directory = os.path.abspath(os.path.join(os.getcwd(), directory))
         else:
             working_directory = f"/var/tmp/alpine_temp_{uuid.uuid4().hex}"
-            
+
         if not os.path.exists(working_directory):
             os.makedirs(working_directory)
-        
+
         latest_version = get_latest_alpine_version()
 
         # Download the latest release of Alpine Linux
@@ -55,12 +55,12 @@ def start_temp_alpine_shell(hostname, command=None, directory=None, password=Non
         # Extract the Alpine Linux filesystem
         print("\033[94mExtracting Alpine Linux filesystem...\033[0m")
         subprocess.run(["sudo", "tar", "-xzf", f"{working_directory}/alpine.tar.gz", "-C", working_directory])
-        
+
         # Add package repositories
         print("\033[94mAdding package repositories...\033[0m")
         subprocess.run(["sudo", "sh", "-c", f"echo 'http://dl-cdn.alpinelinux.org/alpine/latest-stable/main' >> {working_directory}/etc/apk/repositories"])
         subprocess.run(["sudo", "sh", "-c", f"echo 'http://dl-cdn.alpinelinux.org/alpine/latest-stable/community' >> {working_directory}/etc/apk/repositories"])
-        
+
         # Configure network
         print("\033[94mConfiguring network...\033[0m")
         subprocess.run(["sudo", "cp", "/etc/resolv.conf", f"{working_directory}/etc/resolv.conf"])  # Copy host's resolv.conf to chroot
@@ -70,11 +70,11 @@ def start_temp_alpine_shell(hostname, command=None, directory=None, password=Non
         # Change the hostname
         print("\033[94mChanging hostname...\033[0m")
         subprocess.run(["sudo", "sh", "-c", f"echo '{hostname}' > {working_directory}/etc/hostname"])
-        
+
         if password:
             print("\033[94mChanging Password...\033[0m")
             subprocess.run(["sudo", "sh", "-c", f"echo -e '{password}\n{password}' | passwd"])
-        
+
         # Execute the specified command if provided
         if command:
             print(f"\033[94mExecuting command: {command}...\033[0m")

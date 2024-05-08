@@ -4,15 +4,17 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="Temp-Linux-Shell",
+    name="TLS",
     version="0.1.3",
     author="Noriskky",
+    platforms=["Linux"],
     author_email="Noriskky44@proton.me",
     description="Wrapper around Chroot to make it easy to use temporary Linux Shells.",
     long_description=long_description,
     long_description_content_type="text/markdown",
+    license="GPLv3",
     url="https://github.com/Noriskky/tls",
-    keywords="cli",
+    keywords=["cli", "tls", "alpine", "temp-system", "temp-linux-shell", "temp-linux-system"],
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -26,7 +28,7 @@ setuptools.setup(
     python_requires='>=3.6',
     entry_points={
         "console_scripts": [
-            "tls=tls.main:main",
+            "tls=TLS.main:main",
         ],
-    },
+    }
 )
