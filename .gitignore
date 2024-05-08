@@ -1,7 +1,8 @@
 ./dist
 ./build
-*.egg-info
+.egg-info
 TLS/__pycache__
 
-*.xml
+.xml
+.iml
 ./.idea
