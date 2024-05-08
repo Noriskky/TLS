@@ -10,7 +10,7 @@
 
 ## Installation
 
-You can install TLS via pip:
+You can install TLS via Pip:
 
 ```bash
 pip install TLS
