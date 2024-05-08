@@ -1,4 +1,7 @@
 ./dist
 ./build
 *.egg-info
-./Temp-Linux-Shell/__pycache__
+TLS/__pycache__
+
+*.xml
+./.idea
