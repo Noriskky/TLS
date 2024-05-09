@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name=" Temp-Linux-Shell",
+    name="Temp-Linux-Shell",
     version="0.2.1-Beta",
     author="Noriskky",
     platforms=["Linux"],
