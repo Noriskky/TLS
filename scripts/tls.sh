@@ -17,11 +17,5 @@ install_tls_and_execute() {
     "$TLS"
 }
 
-# Check if stdin is not a terminal
-if [ ! -t 0 ]; then
-    # Being piped, execute without waiting for user input
-    install_tls_and_execute < /dev/null
-else
-    # Not being piped, execute normally
-    install_tls_and_execute
-fi
+# Execute the function directly
+install_tls_and_execute
