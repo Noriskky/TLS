@@ -17,11 +17,11 @@ install_tls_and_execute() {
     "$TLS"
 }
 
-# Check if being piped through another process
-if [ -t 0 ]; then
-    # Not being piped, execute directly
+# Check if being run interactively
+if [ -t 0 ] && [ -t 1 ]; then
+    # Being run interactively, execute directly
     install_tls_and_execute
 else
-    # Being piped, don't execute interactively
-    install_tls_and_execute < /dev/tty
+    # Not being run interactively, execute without controlling terminal
+    install_tls_and_execute < /dev/null
 fi
