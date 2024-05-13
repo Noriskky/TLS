@@ -119,3 +119,5 @@ class tls:
         #    quit()
 
         start_temp_alpine_shell(args.hostname, args.command, args.directory, args.password)
+
+main()
