@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="Temp-Linux-Shell",
-    version="1.0-Release",
+    version="1.0",
     author="Noriskky",
     platforms=["Linux"],
     author_email="Noriskky44@proton.me",
