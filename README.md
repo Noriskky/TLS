@@ -8,6 +8,18 @@
 
 ![Screenshot of TLS](https://github.com/Noriskky/TLS/blob/main/pictures/screenshot.png?raw=true) 
 
+## Testing
+
+If you just want to test ``TLS`` without installing it you can do that with the following command:
+```bash
+source <(curl -sSL https://raw.githubusercontent.com/Noriskky/TLS/main/scripts/tls.sh)
+```
+
+
+**NOTE**: 
+THIS will not install the script! <br>
+This script only writes to ``/var/tmp`` so the changes will not be permanent, and it's using a temporary VENV.
+
 ## Installation
 
 You can install TLS via Pip:
