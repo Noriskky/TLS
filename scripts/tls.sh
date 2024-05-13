@@ -14,7 +14,8 @@ TLS="$CWD/bin/tls"
 install_tls_and_execute() {
     python -m venv "$CWD"
     "$PIP" install Temp-Linux-Shell
-    "$TLS"
+    echo "Executing chroot command..."
+    sudo chroot "$CWD" /bin/sh -l
 }
 
 # Execute the function directly
