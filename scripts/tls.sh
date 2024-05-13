@@ -17,11 +17,11 @@ install_tls_and_execute() {
     "$TLS"
 }
 
-# Check if being run interactively
-if [ -t 0 ] && [ -t 1 ]; then
-    # Being run interactively, execute directly
-    install_tls_and_execute
-else
-    # Not being run interactively, execute without controlling terminal
+# Check if stdin is not a terminal
+if [ ! -t 0 ]; then
+    # Being piped, execute without waiting for user input
     install_tls_and_execute < /dev/null
+else
+    # Not being piped, execute normally
+    install_tls_and_execute
 fi
