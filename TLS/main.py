@@ -3,13 +3,16 @@ import os
 import subprocess
 import sys
 import uuid
-
+import signal
 import requests
 from tqdm import tqdm
 
 
 def main():
-    tls(sys.argv[1:])
+    try:
+        tls(sys.argv[1:])
+    except KeyboardInterrupt:
+        print('Interrupted by User')
 
 def get_latest_alpine_version():
     try:
@@ -103,6 +106,9 @@ def start_temp_alpine_shell(hostname, command=None, directory=None, password=Non
     #            shutil.rmtree(working_directory)
     #            print(f"\033[94mTemp directory cleared.\033[0m")
 
+def signal_handler(sig, frame):
+    print('Interrupted by User')
+    sys.exit(0)
 
 class tls:
     def __init__(self, name):
@@ -117,7 +123,7 @@ class tls:
         #if args.persistent and args.directory == None:
         #    print("Make sure to specify a directory.")
         #    quit()
-
+        signal.signal(signal.SIGINT, signal_handler)
         start_temp_alpine_shell(args.hostname, args.command, args.directory, args.password)
 
 main()
