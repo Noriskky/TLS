@@ -1,6 +1,4 @@
 #!/bin/sh
-set -e
-
 min=10
 max=100
 random=$((RANDOM % (max - min + 1) + min))
@@ -10,13 +8,6 @@ PYTHON="$CWD/bin/python"
 PIP="$CWD/bin/pip"
 TLS="$CWD/bin/tls"
 
-# Function to install Temp-Linux-Shell and execute tls
-install_tls_and_execute() {
-    python -m venv "$CWD"
-    "$PIP" install Temp-Linux-Shell
-    echo "Executing chroot command..."
-    sudo chroot "$CWD" /bin/sh -l
-}
-
-# Execute the function directly
-install_tls_and_execute
+python -m venv "$CWD"
+$PIP install Temp-Linux-Shell
+$TLS
